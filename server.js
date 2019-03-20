@@ -38,6 +38,10 @@ const calculateTime = (address, deliveryPosition) => {
     return time === 0 ? 1 : time; 
 }
 
+app.get('/', (request, response) => {
+    response.json('Hey, dev! :D');
+});
+
 app.get('/api/v1/deliveryman/find', (request, response) => {
     let address = request.query.address;
     let weight = request.query.weight;
