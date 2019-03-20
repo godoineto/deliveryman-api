@@ -28,8 +28,10 @@ const getTypeByWeight = (weight) => {
 const chooseDeliverer = (address, weight) => {
     let typesAvailable = getTypeByWeight(weight);
     let deliverersAvailable = deliverers.filter(deliveryman => typesAvailable.includes(deliveryman.type));
+    console.log(deliverersAvailable)
     if (address < 100) return deliverersAvailable[0];
     if (address > 1000) return deliverersAvailable[deliverersAvailable.length-1];
+    console.log(deliverersAvailable.find(deliveryman => deliveryman.position <= address && deliveryman.position+100 > address))
     return deliverersAvailable.find(deliveryman => deliveryman.position <= address && deliveryman.position+100 > address);
 }
 
@@ -46,7 +48,7 @@ app.get('/api/v1/deliveryman/find', (request, response) => {
     let address = request.query.address ? request.query.address : 0;
     let weight = request.query.weight ? request.query.weight :100;
     let delivery = chooseDeliverer(address, weight);
-    delivery.deliveryTime = calculateTime(address, delivery.position);
+    delete(delivery.deliveryTime);// = calculateTime(address, delivery.position);
     response.json(delivery);
 });
 
