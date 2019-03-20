@@ -43,8 +43,8 @@ app.get('/', (request, response) => {
 });
 
 app.get('/api/v1/deliveryman/find', (request, response) => {
-    let address = request.query.address;
-    let weight = request.query.weight;
+    let address = request.query.address ? request.query.address : 0;
+    let weight = request.query.weight ? request.query.weight :100;
     let delivery = chooseDeliverer(address, weight);
     delivery.deliveryTime = calculateTime(address, delivery.position);
     response.json(delivery);
