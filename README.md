@@ -1,5 +1,6 @@
-Repositório criado para ser utilizado no exemplo de monitoramento de serviço com o Postman Monitor
+# Deliveryman API
 
-Collection com exemplo de requisição: https://www.getpostman.com/collections/de2cf78b11b2f3e95d7e
-
-Post blog disponível em: https://medium.com/aurum-tech 
+> A Node.js project
+> Repository Created to be used as an example of service monitoring with Postman Monitor
+> Collection with request example: https://www.getpostman.com/collections/de2cf78b11b2f3e95d7e
+> Post the blog available at: https://medium.com/aurum-tech
